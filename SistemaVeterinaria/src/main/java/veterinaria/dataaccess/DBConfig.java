@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package dataaccess;
+package veterinaria.dataaccess;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -20,7 +20,7 @@ public class DBConfig {
     
     public static Properties loadProperties() {
         Properties properties = new Properties();
-        try (InputStream input = DBConfig.class.getClass().getResourceAsStream(PROPERTIES_FILE)) {
+        try (InputStream input = DBConfig.class.getClassLoader().getResourceAsStream(PROPERTIES_FILE)) {
             if (input != null) {
                 properties.load(input);
             } else {
